@@ -41,7 +41,7 @@ function App() {
         </div>
       }
       {showModal && 
-        <BigPictureModal src={activeImage} urls={urls} closeModal={toggleBigPicture}/>
+        <BigPictureModal src={activeImage} urls={urls} closeModal={toggleBigPicture} openNewBig={(url,id) => setActiveImage({url:url,id:id})}/>
       }
     </div>
   );

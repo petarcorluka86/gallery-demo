@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import '../css/BigPictureModal.css';
 import ProductImageSmall from './ProductImageSmall';
-export default function BigPictureModal({src,urls,closeModal,changeActiveImage}) {
+export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
     const [nextProducts,setNextProducts] = useState([]);
     let count = 0;
 
     useEffect(() => {
         const temp = [];
-        for(let i=1; i<=5; i++){
+        for(let i=1; i<=5 && i<(src.id+urls.length); i++){
             temp.push(urls[src.id+i])
         }
         setNextProducts(temp);
-    },[src.id]);
+    },[src.id,urls]);
 
     return(
         <div className="modalContainer">
@@ -23,6 +23,7 @@ export default function BigPictureModal({src,urls,closeModal,changeActiveImage})
                     height: "100%",
                     borderRadius: "10pt"
                 }}
+                alt="Load fail"
             />
             </div>
             <div className="modalRight">
@@ -35,18 +36,20 @@ export default function BigPictureModal({src,urls,closeModal,changeActiveImage})
                 {nextProducts.map((product=>{
                     count ++;
                     const classN = `mini${count}`;
-                    return(
-                        <div className={classN} >
-                            <ProductImageSmall 
-                                key={product} 
-                                src={product}
-                                id={count}
-                                openBigPicture={()=>{}}
-                                h="100%"
-                                w="100%"
-                            />
-                        </div>
-                    );
+                    if((count+src.id<urls.length))
+                        return(
+                            <div key={product} className={classN} onClick={()=>openNewBig(product,src.id+count)}>
+                                <ProductImageSmall 
+                                    key={product} 
+                                    src={product}
+                                    id={count}
+                                    openBigPicture={()=>{}}
+                                    h="100%"
+                                    w="100%"
+                                />
+                            </div>
+                        );
+                    else return null
                 }))}
             </div>
             <div className="closeModal">
