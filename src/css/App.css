@@ -6,5 +6,6 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  grid-row-gap: 20pt;
 }
-/*# sourceMappingURL=App.module.css.map */
+/*# sourceMappingURL=App.css.map */

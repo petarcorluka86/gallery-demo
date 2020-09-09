@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,IAAI,CAAC;EACD,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,kCAAkC;EACzD,eAAe,EAAE,YAAY;CAChC",
-    "sources": [
-        "../Containers/App.module.scss"
-    ],
-    "names": [],
-    "file": "App.module.css"
-}
