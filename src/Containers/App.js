@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductImage from '../Components/ProductImage';
 import api from '../Services/apiService';
+import styles from '../css/App.module.css'
 
 function App() {
   
@@ -11,7 +12,7 @@ function App() {
   },[]);
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       {urls.map( url => 
         <ProductImage key={url} src={url}/>
       )}
