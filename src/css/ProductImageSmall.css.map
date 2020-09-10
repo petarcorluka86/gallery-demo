@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EACL,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,CAAC;EACT,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,CAAC;CACb",
+    "sources": [
+        "../Components/ProductImageSmall.scss"
+    ],
+    "names": [],
+    "file": "ProductImageSmall.css"
+}
