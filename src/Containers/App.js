@@ -28,14 +28,16 @@ function App() {
           {urls.map( url => {
             count++;
             return (
+              <div style={{border: "1pt solid black", borderRadius: "5pt", width: "150pt" , height: "150pt"}}>
             <ProductImageSmall
               key={url} 
               src={url}
               id={count}
               openBigPicture={toggleBigPicture}
-              h="150pt"
+              h="100%"
               w="150pt"
-            />);
+            />
+            </div>);
           }
           )}
         </div>

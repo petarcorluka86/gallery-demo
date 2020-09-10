@@ -35,6 +35,10 @@
             height: 26pt;
             border-radius: 5pt;
         }
+
+        button:focus{
+            outline: 0;
+        }
     }
 
     .modalRight {
@@ -50,6 +54,10 @@
             width: 26pt;
             height: 26pt;
             border-radius: 5pt;
+        }
+
+        button:focus{
+            outline: 0;
         }
     }
 

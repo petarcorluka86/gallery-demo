@@ -47,6 +47,10 @@
   border-radius: 5pt;
 }
 
+.modalContainer .modalLeft button:focus {
+  outline: 0;
+}
+
 .modalContainer .modalRight {
   -ms-grid-column-align: center;
       justify-self: center;
@@ -66,6 +70,10 @@
   width: 26pt;
   height: 26pt;
   border-radius: 5pt;
+}
+
+.modalContainer .modalRight button:focus {
+  outline: 0;
 }
 
 .modalContainer .modalBottom {
