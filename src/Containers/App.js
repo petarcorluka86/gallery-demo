@@ -9,7 +9,7 @@ function App() {
   const [urls,setUrls] = useState([]);
   const [showModal,setShowModal] = useState(false);
   const [activeImage,setActiveImage] = useState();
-  let count = 1;
+  let count = -1;
 
   useEffect(() => {
     api.getUrls().then(response => setUrls(response));

@@ -10,7 +10,6 @@ export default function ProductImageSmall({src, openBigPicture, id, h, w}) {
                 backgroundSize: "cover",
                 border: "1pt solid black"
             }}
-
             onClick={() => openBigPicture(src, id)}
         >
         </button>

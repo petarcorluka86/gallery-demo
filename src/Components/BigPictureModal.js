@@ -7,8 +7,10 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
 
     useEffect(() => {
         const temp = [];
-        for(let i=1; i<=5 && i<(src.id+urls.length); i++){
-            temp.push(urls[src.id+i])
+        for(let i=-2; i<=2; i++){
+            console.log("SRC ID = ",src.id)
+            console.log("i: ",src.id+i)
+            temp.push({url: urls[src.id+i], id: src.id+i})
         }
         setNextProducts(temp);
     },[src.id,urls]);
@@ -17,6 +19,7 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
         <div className="modalContainer">
             <div className="modalCenter">
             <img 
+                key={src.url}
                 src={src.url}
                 style={{
                     width: "100%",
@@ -38,11 +41,10 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
                     const classN = `mini${count}`;
                     if((count+src.id<urls.length))
                         return(
-                            <div key={product} className={classN} onClick={()=>openNewBig(product,src.id+count)}>
+                            <div key={product.url} className={classN} onClick={()=>openNewBig(product.url,product.id)}>
                                 <ProductImageSmall 
-                                    key={product} 
-                                    src={product}
-                                    id={count}
+                                    src={product.url}
+                                    id={product.id}
                                     openBigPicture={()=>{}}
                                     h="100%"
                                     w="100%"
