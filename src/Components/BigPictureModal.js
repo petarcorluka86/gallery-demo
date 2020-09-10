@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import '../css/BigPictureModal.css';
 import ProductImageSmall from './ProductImageSmall';
+import '../css/BigPictureModal.css';
+
 export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
     const [nextProducts,setNextProducts] = useState([]);
-    let count = 0;
+    let count = 1;
 
     useEffect(() => {
         const temp = [];
@@ -21,37 +22,59 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
         setNextProducts(temp);
     },[src.id,urls]);
 
-    return(
+    return (
         <div className="modalContainer">
+
             <div className="modalCenter">
-                <div style={{ width: "100%",height: "100%",borderRadius: "7pt", 
-                            backgroundImage: `url(${src.url})`, backgroundSize: "100% 100%",
-                            display: "grid", gridTemplateRows: "auto 10%", gridTemplateColumns: "60pt auto"
-            }}>
+                <div 
+                    style={{ 
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "7pt", 
+                        backgroundImage: `url(${src.url})`, 
+                        backgroundSize: "100% 100%",
+                        display: "grid", 
+                        gridTemplateRows: "auto 10%", 
+                        gridTemplateColumns: "60pt auto"
+                    }}
+                >
                     <div className="imgCounter">
                         <img src="https://image.flaticon.com/icons/svg/2983/2983759.svg" alt="counter"/>
                         <span>{src.id +1 }/{urls.length}</span>
                     </div>
                 </div>
             </div>
-            <div className="modalRight"><button onClick={()=>openNewBig(nextProducts[6].url,nextProducts[6].id)}></button></div>
-            <div className="modalLeft"><button onClick={()=>openNewBig(nextProducts[4].url,nextProducts[4].id)}></button></div>
-            <div className="modalBottom">
-                {nextProducts.map((product=>{
-                    count ++;
-                    const miniClass = `mini${count}`;
-                        return(
-                            <div key={product.url} className={miniClass}>
-                                <ProductImageSmall 
-                                    image={product}
-                                    openBigPicture={()=> openNewBig(product.url,product.id)}
-                                />
-                            </div>
-                        );
-                }))}
+
+            <div className="modalRight">
+                <button onClick={()=>openNewBig(nextProducts[6].url,nextProducts[6].id)}></button>
             </div>
-            <div className="deleteImage"><label htmlFor="del"><button id="del" onClick={()=> alert("Not implemented yet!")}></button>DELETE</label></div>
-            <div className="closeModal"><button onClick={()=>closeModal()}></button></div>
+
+            <div className="modalLeft">
+                <button onClick={()=>openNewBig(nextProducts[4].url,nextProducts[4].id)}></button>
+            </div>
+
+            <div className="modalBottom">
+                {nextProducts.map( product =>
+                    <div key={product.url} className={`mini${count++}`}>
+                        <ProductImageSmall 
+                            image={product}
+                            openBigPicture={()=> openNewBig(product.url,product.id)}
+                        />
+                    </div>
+                )}
+            </div>
+
+            <div className="deleteImage">
+                <label htmlFor="del">
+                    <button id="del" onClick={()=> alert("Not implemented yet!")}></button>
+                    DELETE
+                </label>
+            </div>
+
+            <div className="closeModal">
+                <button onClick={()=>closeModal()}></button>
+            </div>
+
       </div>
     );
 }
