@@ -142,4 +142,30 @@
 .modalContainer .closeModal button:focus {
   outline: 0;
 }
+
+.modalContainer .deleteImage {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  margin: 20pt 0;
+}
+
+.modalContainer .deleteImage button {
+  background: url("https://image.flaticon.com/icons/svg/1345/1345874.svg");
+  background-size: cover;
+  border: 0pt;
+  width: 26pt;
+  height: 26pt;
+  border-radius: 5pt;
+}
+
+.modalContainer .deleteImage button:focus {
+  outline: 0;
+}
 /*# sourceMappingURL=BigPictureModal.css.map */

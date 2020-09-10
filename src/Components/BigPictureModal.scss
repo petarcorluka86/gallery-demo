@@ -112,4 +112,25 @@
             outline: 0;
         }
     }
+
+    .deleteImage{
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+        align-self: start;
+        margin: 20pt 0;
+        
+        button {
+            background: url("https://image.flaticon.com/icons/svg/1345/1345874.svg");
+            background-size: cover;
+            border: 0pt;
+            width: 26pt;
+            height: 26pt;
+            border-radius: 5pt;
+        }
+
+        button:focus{
+            outline: 0;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/BigPictureModal.css';
 import ProductImageSmall from './ProductImageSmall';
-export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
+export default function BigPictureModal({src,urls,closeModal,openNewBig,deleteImage}) {
     const [nextProducts,setNextProducts] = useState([]);
     let count = 0;
 
@@ -53,6 +53,7 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
                         );
                 }))}
             </div>
+            <div className="deleteImage"><button  onClick={()=> alert("Not implemented yet!")}></button></div>
             <div className="closeModal"><button onClick={()=>closeModal()}></button></div>
       </div>
     );
