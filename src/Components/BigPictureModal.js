@@ -36,10 +36,10 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
             />
             </div>
             <div className="modalRight">
-                <button>RIGHT</button>
+                <button onClick={()=>openNewBig(nextProducts[3].url,nextProducts[3].id)}>RIGHT</button>
             </div>
             <div className="modalLeft">
-                <button>LEFT</button>
+                <button onClick={()=>openNewBig(nextProducts[1].url,nextProducts[1].id)}>LEFT</button>
             </div>
             <div className="modalBottom">
                 {nextProducts.map((product=>{
