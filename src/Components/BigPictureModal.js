@@ -24,23 +24,18 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
     return(
         <div className="modalContainer">
             <div className="modalCenter">
-            <img 
-                key={src.url}
-                src={src.url}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: "10pt"
-                }}
-                alt="Load fail"
-            />
+                <img 
+                    src={src.url}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "10pt"
+                    }}
+                    alt="Load fail"
+                />
             </div>
-            <div className="modalRight">
-                <button onClick={()=>openNewBig(nextProducts[3].url,nextProducts[3].id)}></button>
-            </div>
-            <div className="modalLeft">
-                <button onClick={()=>openNewBig(nextProducts[1].url,nextProducts[1].id)}></button>
-            </div>
+            <div className="modalRight"><button onClick={()=>openNewBig(nextProducts[3].url,nextProducts[3].id)}></button></div>
+            <div className="modalLeft"><button onClick={()=>openNewBig(nextProducts[1].url,nextProducts[1].id)}></button></div>
             <div className="modalBottom">
                 {nextProducts.map((product=>{
                     count ++;
@@ -58,9 +53,7 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
                         );
                 }))}
             </div>
-            <div className="closeModal">
-                <button onClick={()=>closeModal()}></button>
-            </div>
+            <div className="closeModal"><button onClick={()=>closeModal()}></button></div>
       </div>
     );
 }
