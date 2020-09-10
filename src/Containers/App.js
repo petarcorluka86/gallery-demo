@@ -26,6 +26,11 @@ export default function App() {
     setUrls(newUrls);
   }
 
+  const restoreDeleted = () => {
+    localStorage.clear();
+    api.getUrls().then(response => setUrls(response));
+  }
+
   const toggleModal = (url,id) => {
     setShowModal(!showModal);
     setActiveImage({url:url, id:id});
@@ -34,7 +39,7 @@ export default function App() {
   return (
     <div>
       <div className="app">
-        <Navbar modalOpen={showModal} />
+        <Navbar modalOpen={showModal} restoreDelted={restoreDeleted}/>
         <div className="photos">
           {urls.map( url => 
             <div key={url} style={{border: "1pt solid black", borderRadius: "5pt", width: "150pt" , height: "150pt"}}>

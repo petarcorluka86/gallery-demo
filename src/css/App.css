@@ -36,19 +36,25 @@
   -ms-grid-column: 3;
   grid-column: 3;
   text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
+  -ms-grid-row-align: center;
       align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
 }
 
 .app .navbar .flom button {
-  width: 40%;
+  color: white;
+  font-size: 15pt;
+  width: 90%;
   height: 28pt;
   border: 0pt;
   border-radius: 20pt;
-  background: url("../Assets/Images/flom.png");
+  background: rgba(255, 255, 255, 0.4);
   background-size: cover;
   outline: 0;
+  font-weight: 600;
 }
 
 .app .photos {

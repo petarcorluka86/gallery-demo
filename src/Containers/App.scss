@@ -31,15 +31,20 @@ $title-div-height: 45pt;
             grid-column: 3;
             text-align: center;
             align-self: center;
+            display: grid;
+            grid-template-columns: 50% 50%;
 
             button {
-                width: 40%;
+                color: white;
+                font-size: 15pt;
+                width: 90%;
                 height: 28pt;
                 border: 0pt;
                 border-radius: 20pt;
-                background: url("../Assets/Images/flom.png");
+                background: rgba(255, 255, 255, 0.4);
                 background-size: cover;
                 outline: 0;
+                font-weight: 600;
             }
         }
     }
