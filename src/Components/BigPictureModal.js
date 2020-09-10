@@ -24,7 +24,7 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig,deleteIm
     return(
         <div className="modalContainer">
             <div className="modalCenter">
-                <div style={{ width: "100%",height: "100%",borderRadius: "10pt", 
+                <div style={{ width: "100%",height: "100%",borderRadius: "7pt", 
                             backgroundImage: `url(${src.url})`, backgroundSize: "100% 100%",
                             display: "grid", gridTemplateRows: "auto 10%", gridTemplateColumns: "60pt auto"
             }}>
