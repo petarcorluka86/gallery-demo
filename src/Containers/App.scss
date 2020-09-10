@@ -1,9 +1,23 @@
-
+$title-div-height: 100pt;
 .app {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    justify-content: space-evenly;
-    grid-row-gap: 20pt;
+    grid-template-rows: $title-div-height auto;
+
+
+    .title{
+        grid-row:1;
+        line-height: $title-div-height ;
+        font-size: $title-div-height/2;
+        text-align: center;
+    }
+
+    .photos{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto;
+        justify-content: space-evenly;
+        grid-row-gap: 20pt;
+        grid-row:2;
+    }
 }
 
 .modal {
