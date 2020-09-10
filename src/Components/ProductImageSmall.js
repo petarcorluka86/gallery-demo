@@ -1,21 +1,20 @@
 import React from 'react';
 
-export default function ProductImageSmall({src, openBigPicture, id, h, w}) {
+export default function ProductImageSmall({image,openBigPicture}) {
     return (
         <img
-            id={id}
+            id={image.id}
+            src={image.url}
             className="img-small"
-            src={src}
             alt="small"
+            onClick={() => openBigPicture(image.url, image.id)}
             style={{
-                height: `${h}`,
-                width: `${w}`,
+                height: "100%",
+                width: "100%",
                 borderRadius: "5pt",
                 border: 0,
                 outline: 0
             }}
-            onClick={() => openBigPicture(src, id)}
-        >
-        </img>
+        />
     );
 }

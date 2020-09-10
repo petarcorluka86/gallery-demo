@@ -121,6 +121,9 @@
 
 .modalContainer .modalBottom .mini6 {
   padding: 12pt;
+  width: 60%;
+  -ms-grid-column-align: center;
+      justify-self: center;
   -ms-grid-column: 6;
   grid-column: 6;
 }

@@ -27,11 +27,11 @@ function App() {
         <div className="app">
           {urls.map( url => {
             count++;
+            const data = {url:url, id: count};
             return (
               <div key={url} style={{border: "1pt solid black", borderRadius: "5pt", width: "150pt" , height: "150pt"}}>
-                <ProductImageSmall 
-                  src={url}
-                  id={count}
+                <ProductImageSmall
+                  image={data}
                   openBigPicture={toggleBigPicture}
                   h="100%"
                   w="150pt"

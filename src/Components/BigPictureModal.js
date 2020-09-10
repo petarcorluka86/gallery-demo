@@ -39,15 +39,12 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
             <div className="modalBottom">
                 {nextProducts.map((product=>{
                     count ++;
-                    const classN = `mini${count}`;
+                    const miniClass = `mini${count}`;
                         return(
-                            <div key={product.url} className={classN} onClick={()=>openNewBig(product.url,product.id)}>
+                            <div key={product.url} className={miniClass}>
                                 <ProductImageSmall 
-                                    src={product.url}
-                                    id={product.id}
-                                    openBigPicture={()=>{}}
-                                    h="100%"
-                                    w="100%"
+                                    image={product}
+                                    openBigPicture={()=> openNewBig(product.url,product.id)}
                                 />
                             </div>
                         );
