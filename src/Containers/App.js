@@ -14,9 +14,17 @@ export default function App() {
   let count = 0;
 
   useEffect(() => { 
-    api.getUrls()
-      .then(response => setUrls(response))
+    const urlsStorage = localStorage.getItem('urls');
+    if(urlsStorage) setUrls( urlsStorage.split(","));
+    else api.getUrls().then(response => setUrls(response))
   },[]);
+
+  const deleteItem = (urlToDelte) => {
+    const newUrls = urls.filter(url =>  url !== urlToDelte);
+    toggleModal(urlToDelte,1);
+    localStorage.setItem('urls',newUrls);
+    setUrls(newUrls);
+  }
 
   const toggleModal = (url,id) => {
     setShowModal(!showModal);
@@ -41,7 +49,7 @@ export default function App() {
         </div>
       </div>
       <Modal show={showModal}>
-        <BigPictureModal src={activeImage} urls={urls} closeModal={()=>setShowModal(!showModal)} openNewBig={(url,id) => setActiveImage({url:url,id:id})}/>
+        <BigPictureModal src={activeImage} urls={urls} closeModal={()=>setShowModal(!showModal)} openNewBig={(url,id) => setActiveImage({url:url,id:id})} deleteItem={deleteItem}/>
       </Modal>
     </div>
   );

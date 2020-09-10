@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProductImageSmall from './ProductImageSmall';
 import '../css/BigPictureModal.css';
 
-export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
+export default function BigPictureModal({src,urls,closeModal,openNewBig, deleteItem}) {
     const [nextProducts,setNextProducts] = useState([]);
     let count = 1;
 
@@ -55,7 +55,7 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
 
             <div className="modalBottom">
                 {nextProducts.map( product =>
-                    <div key={product.url} className={`mini${count++}`}>
+                    <div key={product.url+count} className={`mini${count++}`}>
                         <ProductImageSmall 
                             image={product}
                             openBigPicture={()=> openNewBig(product.url,product.id)}
@@ -66,7 +66,7 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
 
             <div className="deleteImage">
                 <label htmlFor="del">
-                    <button id="del" onClick={()=> alert("Not implemented yet!")}></button>
+                    <button id="del" onClick={()=> deleteItem(src.url)}></button>
                     DELETE
                 </label>
             </div>
