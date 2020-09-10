@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductImageSmall from '../Components/ProductImageSmall';
 import BigPictureModal from '../Components/BigPictureModal';
+import Navbar from '../Components/Navbar';
 import { Modal } from 'react-bootstrap';
 import api from '../Services/apiService';
 import '../css/App.css';
@@ -25,7 +26,7 @@ export default function App() {
   return (
     <div>
       <div className="app">
-        <div className="title">Flom Products Gallery</div>
+        <Navbar modalOpen={showModal} />
         <div className="photos">
           {urls.map( url => 
             <div key={url} style={{border: "1pt solid black", borderRadius: "5pt", width: "150pt" , height: "150pt"}}>
