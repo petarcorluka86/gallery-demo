@@ -3,6 +3,7 @@ import ProductImageSmall from '../Components/ProductImageSmall';
 import BigPictureModal from '../Components/BigPictureModal';
 import api from '../Services/apiService';
 import '../css/App.css';
+import { Modal } from 'react-bootstrap';
 
 function App() {
   
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <div>
-      {!showModal &&
+      {true &&
         <div className="app">
           {urls.map( url => {
             count++;
@@ -42,9 +43,7 @@ function App() {
           )}
         </div>
       }
-      {showModal && 
-        <BigPictureModal src={activeImage} urls={urls} closeModal={toggleBigPicture} openNewBig={(url,id) => setActiveImage({url:url,id:id})}/>
-      }
+      <Modal show={showModal}><BigPictureModal src={activeImage} urls={urls} closeModal={toggleBigPicture} openNewBig={(url,id) => setActiveImage({url:url,id:id})}/></Modal>
     </div>
   );
 }
