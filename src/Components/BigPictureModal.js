@@ -8,9 +8,15 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
     useEffect(() => {
         const temp = [];
         for(let i=-2; i<=2; i++){
-            console.log("SRC ID = ",src.id)
-            console.log("i: ",src.id+i)
-            temp.push({url: urls[src.id+i], id: src.id+i})
+            if(src.id+i < 0) {
+                temp.push({url: urls[urls.length+i], id: urls.length+i});
+            }
+            else if (src.id +i > urls.length -1) {
+                temp.push({url: urls[i  - 1], id: i -1});
+            }
+            else {
+                temp.push({url: urls[src.id+i], id: src.id+i});
+            }
         }
         setNextProducts(temp);
     },[src.id,urls]);
@@ -39,7 +45,6 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
                 {nextProducts.map((product=>{
                     count ++;
                     const classN = `mini${count}`;
-                    if((count+src.id<urls.length))
                         return(
                             <div key={product.url} className={classN} onClick={()=>openNewBig(product.url,product.id)}>
                                 <ProductImageSmall 
@@ -51,7 +56,6 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig}) {
                                 />
                             </div>
                         );
-                    else return null
                 }))}
             </div>
             <div className="closeModal">
