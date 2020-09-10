@@ -21,26 +21,27 @@ function App() {
     setActiveImage({url:url, id:id});
   }
   
+
   return (
     <div>
         <div className="app">
           {urls.map( url => {
             count++;
             return (
-            <div style={{border: "1pt solid black", borderRadius: "5pt", width: "150pt" , height: "150pt"}}>
-              <ProductImageSmall
-                key={url} 
-                src={url}
-                id={count}
-                openBigPicture={toggleBigPicture}
-                h="100%"
-                w="150pt"
-              />
-            </div>);
+              <div key={url} style={{border: "1pt solid black", borderRadius: "5pt", width: "150pt" , height: "150pt"}}>
+                <ProductImageSmall 
+                  src={url}
+                  id={count}
+                  openBigPicture={toggleBigPicture}
+                  h="100%"
+                  w="150pt"
+                />
+              </div>);
           }
-        )}
-      </div>
-      <Modal show={showModal}><BigPictureModal src={activeImage} urls={urls} closeModal={toggleBigPicture} openNewBig={(url,id) => setActiveImage({url:url,id:id})}/></Modal>
+          )}
+        </div>
+      
+      <Modal show={showModal}><BigPictureModal src={activeImage} urls={urls} closeModal={()=>setShowModal(!showModal)} openNewBig={(url,id) => setActiveImage({url:url,id:id})}/></Modal>
     </div>
   );
 }
