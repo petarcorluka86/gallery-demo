@@ -134,3 +134,28 @@
         }
     }
 }
+
+.imgCounter{
+    background: rgba(0, 0, 0, 0.37);
+    display: flex;
+    width: fit-content;
+    margin: 5pt 10pt;
+    grid-row: 2;
+    grid-column: 1;
+    height: 23pt;
+    border-radius: 3pt;
+    img {
+
+        align-self: center;
+        margin-left: 4pt;
+        width: 15pt;
+        height: 15pt;
+    }
+    span {
+        align-self: center;
+        line-height: 15pt;
+        font-size: 13pt;
+        margin-left: 5pt;
+        margin-right: 5pt;
+    }
+}

@@ -24,15 +24,15 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig,deleteIm
     return(
         <div className="modalContainer">
             <div className="modalCenter">
-                <img 
-                    src={src.url}
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "10pt"
-                    }}
-                    alt="Load fail"
-                />
+                <div style={{ width: "100%",height: "100%",borderRadius: "10pt", 
+                            backgroundImage: `url(${src.url})`, backgroundSize: "100% 100%",
+                            display: "grid", gridTemplateRows: "auto 10%", gridTemplateColumns: "60pt auto"
+            }}>
+                    <div className="imgCounter">
+                        <img src="https://image.flaticon.com/icons/svg/2983/2983759.svg"/>
+                        <span>{src.id +1 }/{urls.length}</span>
+                    </div>
+                </div>
             </div>
             <div className="modalRight"><button onClick={()=>openNewBig(nextProducts[3].url,nextProducts[3].id)}></button></div>
             <div className="modalLeft"><button onClick={()=>openNewBig(nextProducts[1].url,nextProducts[1].id)}></button></div>
