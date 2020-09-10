@@ -1,5 +1,5 @@
 .modalContainer {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.6);
     position: realtive;
     width: 41%;
     height: 570pt;
@@ -24,7 +24,7 @@
         align-self: center;
 
         button {
-            background: url("https://c7.uihere.com/files/591/793/284/download-button-icon-previous-button-png-transparent-image.jpg");
+            background: url("../Assets/Images/left.jpg");
             background-size: cover;
             border: 0pt;
             width: 26pt;
@@ -52,6 +52,9 @@
             border-radius: 5pt;
         }
 
+        button:focus{
+            outline: 0;
+        }
         
     }
 
@@ -75,7 +78,7 @@
         }
 
         .mini3{
-            margin: 10pt;
+            padding: 12pt;
             grid-column: 3;
         }
 
@@ -103,6 +106,10 @@
             width: 26pt;
             height: 26pt;
             border-radius: 5pt;
+        }
+
+        button:focus{
+            outline: 0;
         }
     }
 }
