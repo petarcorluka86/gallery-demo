@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/App.css';
-import { propTypes } from 'react-bootstrap/esm/Image';
 
 export default function Navbar({modalOpen}){
     return  <div className="navbar">
