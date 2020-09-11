@@ -1,20 +1,21 @@
 .modalContainer {
-  background: rgba(50, 50, 50, 0.9);
   position: realtive;
   width: 100vw;
-  height: 570pt;
+  height: 100vw;
   z-index: 15;
-  margin: 50pt auto auto auto;
+  margin: 0pt auto auto auto;
   border-radius: 0pt;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 5% 20% 10% 30% 10% 20% 5%;
-      grid-template-columns: 5% 20% 10% 30% 10% 20% 5%;
-  -ms-grid-rows: 10% 65% 5% 15% 5%;
-      grid-template-rows: 10% 65% 5% 15% 5%;
+  -ms-grid-columns: 5% 15% 10% 40% 10% 15% 5%;
+      grid-template-columns: 5% 15% 10% 40% 10% 15% 5%;
+  -ms-grid-rows: 10pt 500pt 20pt 100pt 20pt;
+      grid-template-rows: 10pt 500pt 20pt 100pt 20pt;
+  grid-row-gap: 5pt;
 }
 
 .modalContainer .modalCenter {
+  background: rgba(50, 50, 50, 0.9);
   -ms-grid-column: 4;
   grid-column: 4;
   -ms-grid-row: 2;
@@ -24,6 +25,7 @@
 }
 
 .modalContainer .modalLeft {
+  background: rgba(50, 50, 50, 0.9);
   -ms-grid-column: 3;
   grid-column: 3;
   -ms-grid-row: 2;
@@ -49,6 +51,7 @@
 }
 
 .modalContainer .modalRight {
+  background: rgba(50, 50, 50, 0.9);
   -ms-grid-column-align: center;
       justify-self: center;
   -ms-flex-item-align: center;
@@ -74,6 +77,7 @@
 }
 
 .modalContainer .modalBottom {
+  background: rgba(50, 50, 50, 0);
   -ms-grid-column: 2;
   -ms-grid-column-span: 5;
   grid-column: 2/7;

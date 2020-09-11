@@ -1,16 +1,18 @@
 .modalContainer {
-    background: rgba(50, 50, 50, 0.9);
     position: realtive;
     width: 100vw;
-    height: 570pt;
+    height: 100vw;
     z-index: 15;
-    margin: 50pt auto auto auto;
+    margin: 0pt auto auto auto;
     border-radius: 0pt;
     display: grid;
-    grid-template-columns: 5% 20% 10% 30% 10% 20% 5%;
-    grid-template-rows: 10% 65% 5% 15% 5%; 
+    grid-template-columns: 5% 15% 10% 40% 10% 15% 5%;
+    grid-template-rows: 10pt 500pt 20pt 100pt 20pt; 
+    grid-row-gap: 5pt;
+
 
     .modalCenter {
+        background: rgba(50, 50, 50, 0.9);
         grid-column: 4;
         grid-row: 2;
         background: rgba(255, 255, 255, 0.0);
@@ -18,6 +20,7 @@
     }
 
     .modalLeft {
+        background: rgba(50, 50, 50, 0.9);
         grid-column: 3;
         grid-row: 2;
         justify-self: center;
@@ -38,6 +41,7 @@
     }
 
     .modalRight {
+        background: rgba(50, 50, 50, 0.9);
         justify-self: center;
         align-self: center;
         grid-column: 5;
@@ -59,6 +63,7 @@
     }
 
     .modalBottom {
+        background: rgba(50, 50, 50, 0.0);
         grid-column: 2/7;
         grid-row: 4;
         border-radius: 10pt;
