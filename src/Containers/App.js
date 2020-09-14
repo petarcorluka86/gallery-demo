@@ -42,7 +42,7 @@ export default function App() {
         <Navbar modalOpen={showModal} restoreDelted={restoreDeleted}/>
         <div className="photos">
           {urls.map( url => 
-            <div key={url} style={{border: "1pt solid black", borderRadius: "5pt", width: "150pt" , height: "150pt"}}>
+            <div key={url} className="onePhoto">
               <ProductImageSmall
                 image={{url:url, id: count++}}
                 openBigPicture={toggleModal}

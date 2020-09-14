@@ -1,18 +1,14 @@
+
 .modalContainer {
-    position: realtive;
     width: 100vw;
-    height: 100vw;
-    z-index: 15;
-    margin: 0pt auto auto auto;
-    border-radius: 0pt;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 5% 15% 10% 40% 10% 15% 5%;
-    grid-template-rows: 10pt 500pt 20pt 100pt 20pt; 
+    grid-template-columns: 5% 15% 11% 38% 11% 15% 5%;
+    grid-template-rows: 10pt 400pt 10pt 90pt 30pt; 
     grid-row-gap: 5pt;
 
 
     .modalCenter {
-        background: rgba(50, 50, 50, 0.9);
         grid-column: 4;
         grid-row: 2;
         background: rgba(255, 255, 255, 0.0);
@@ -107,32 +103,42 @@
         }
     }
 
-    .deleteImage{
-        grid-column: 1/3;
-        grid-row: 1;
-        justify-self: left;
-        align-self: start;
-        margin: 20pt 5vw;
-        font-size: 25pt;
-        line-height: 30pt;
-        height: 30pt;
-        padding: 3pt 8pt 3pt 5pt;
-        background:rgba(255, 255, 255, 0.9);
-        border-radius: 5pt;
-        
-        button {
-            background: url("../Assets/Images/delete.svg");
-            background-size: cover;
-            border: 0pt;
-            width: 26pt;
-            height: 26pt;
+    .flomButtons{
+        grid-row: 2;
+        grid-column: 2;
+
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 50pt auto;
+
+        .deleteImage{
+            grid-row: 1;
+            background:rgba(255, 255, 255, 0.9);
+            width: fit-content;
+            line-height: 30pt;
+            height: 30pt;
+            font-size: 25pt;
+            padding: 3pt 8pt 3pt 5pt;
             border-radius: 5pt;
+            
+            button {
+                background: url("../Assets/Images/delete.svg");
+                background-size: cover;
+                border: 0pt;
+                width: 26pt;
+                height: 26pt;
+                border-radius: 5pt;
+            }
+    
+            button:focus{
+                outline: 0;
+            }
         }
 
-        button:focus{
-            outline: 0;
-        }
+        
     }
+
+    
 }
 
 .imgCounter{

@@ -64,8 +64,10 @@ export default function BigPictureModal({src,urls,closeModal,openNewBig, deleteI
                 )}
             </div>
 
-            <div className="deleteImage">
-                <label htmlFor="del">
+            
+
+            <div className="flomButtons">
+            <label htmlFor="del" className="deleteImage">
                     <button id="del" onClick={()=> deleteItem(src.url)}></button>
                     DELETE
                 </label>
